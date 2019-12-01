@@ -3,7 +3,10 @@
  * @param  {[number]} number [numero a ser formatado]
  * @return {[string]}        [retorna STRING formatado]
  */
-function pad2(number)
-{
-     return (number < 10 ? '0' : '') + number;
-}
+const pad2 = (n) => (n < 10 ? '0' : '') + n
+
+
+
+// console.log(pad2(6))//(string)06
+// console.log(pad2(15))//(string)15
+
