@@ -1,25 +1,35 @@
-/**
- * Criar um ID único
- * @param {string|number} prefix 
- * @param {int} length
- * @param {boolean} randomlyUC  randomly UpperCase
- * @return {string}
- */
-const uniqueId = (prefix = '', length = 0, randomlyUC=true) => {
-    let g = Math.random().toString(32)
-    length = length || g.length - 1
-    if (length > 10) g += Math.random().toString(16).substr(2) //caso length for maior que 10
 
-    const out = prefix + (g.substr(2, length))
-    if(randomlyUC)
-        return out.split('').map(n=>{
-            const does = Math.round(Math.random())
-            return does ? n.toUpperCase() : n
-        }).join('')
-    else return out
-}
+const uniqueIdSimple = () => Math.random().toString(36).slice(2);
 
+export const uniqueId = (strictLevel=1)=>{
+    const arrayUniqueId = [];
+    do arrayUniqueId.push(uniqueIdSimple());
+    while(strictLevel > arrayUniqueId.length);
+    return arrayUniqueId.map(value=> value.slice(2)).join('');
+};
 
-// console.log(uniqueId()) //return string random de max.12 (lowercase + uppercaseRandomly)
-// console.log(uniqueId('',0,false)) //return string random de max.12 (lowercase)
-// console.log(uniqueId('--')) //return string random de max.12 (lowercase) prefix '--'
+const charRandomLowerOrUpperCase = (chars) => chars.split('').map(char=>Math.round(Math.random()) ? char.toLowerCase() : char.toUpperCase()).join('');
+
+const uniqueIdUntilProvider = (maxChar=6, namespace='', randomCharFormat=false) => {
+    let valueId = '';
+    do valueId += uniqueIdSimple();
+    while (maxChar > valueId.length);
+    valueId = valueId.substr(0,maxChar); //or slice?
+    return namespace + (!randomCharFormat ?  valueId : charRandomLowerOrUpperCase(valueId));
+};
+
+export const uniqueIdUntil = (maxChar=6, namespace='') => uniqueIdUntilProvider(maxChar,namespace);
+export const uniqueIdStrictUntil = (maxChar=6, namespace='') => uniqueIdUntilProvider(maxChar,namespace,true);
+
+export const hash = (strictLevel=6, splitInto=5, separator='-') => {
+    const valueHash =   charRandomLowerOrUpperCase(uniqueId(strictLevel))
+                        .split('')
+                        .map((char,index)=> index&&index%splitInto===0 ? separator+char : char)
+                        .join('');
+    
+    return valueHash.split(separator)
+                    .filter(chars=> chars.length===splitInto)
+                    .join(separator);
+};
+
+export default uniqueId;
