@@ -23,7 +23,3 @@ Executa todos os testes no modo de exibição (_watch_)
 Executa a checagem de tipos
 
 ### `npm run check:watch`
-
-#### referencias
-
-- Page Visibility - https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
