@@ -1,0 +1,20 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "removeComments": true,
+    "declaration": true,
+    "moduleResolution": "Node",
+    "module": "ESNext",
+    "target": "es2015",
+    "lib": ["es2018", "dom"],
+    "strict": true,
+    "outDir": "dist",
+    "newLine": "lf",
+    "rootDir": "src"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "src/**/*.test.ts"]
+}
