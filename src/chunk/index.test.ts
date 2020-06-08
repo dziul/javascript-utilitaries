@@ -1,4 +1,4 @@
-import chunk from './index';
+import { arrayChunk as chunk } from './index';
 
 it('Should return the matrix with the chunks. This chunks should have the set size value or less.', () => {
   const target = [1, 2, 3, 4, 5, 6];
