@@ -1,14 +1,14 @@
 {
-  "compileOnSave": true,
+  "compileOnSave": false,
   "compilerOptions": {
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,
     "removeComments": true,
     "declaration": true,
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     "module": "ESNext",
-    "target": "es2015",
+    "target": "ES2015",
     "lib": ["es2018", "dom"],
     "strict": true,
     "outDir": "dist",
