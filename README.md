@@ -17,6 +17,7 @@ Funções auxiliares.
 - [roundNearestNumber](./src/roundNearestNumber)
 - [shuffeMe](./src/shuffeMe)
 - [uniqueId](./src/uniqueId)
+- [arraySequence](./src/arraySequence)
 
 ## Scripts
 
