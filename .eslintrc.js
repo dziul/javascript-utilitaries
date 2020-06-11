@@ -1,9 +1,8 @@
 module.exports = {
-  // root: true,
   env: {
     browser: true,
     es6: true,
-    // node: true,
+    node: true,
     jest: true,
   },
   extends: ['standard', 'plugin:prettier/recommended'],
@@ -19,6 +18,7 @@ module.exports = {
   plugins: ['@typescript-eslint', 'eslint-plugin-import-helpers', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
+    'no-unused-expressions': 'off',
     'import-helpers/order-imports': [
       'warn',
       {

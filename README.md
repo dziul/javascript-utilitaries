@@ -18,6 +18,18 @@ Funções auxiliares.
 - [shuffeMe](./src/shuffeMe)
 - [uniqueId](./src/uniqueId)
 - [arraySequence](./src/arraySequence)
+- [detectAdBlock](./src/detectAdBlock)
+- [encrypt](./src/encrypt)
+- [htmlStringToDomDocument](./src/htmlStringToDomDocument)
+- [jwtParser](./src/jwtParser)
+- [localStorageEncrypted](./src/localStorageEncrypted)
+- [manageMetaTag](./src/manageMetaTag)
+- [removeNode](./src/removeNode)
+- [snakeCaseFormatter](./src/snakeCaseFormatter)
+- [stringNormalize](./src/stringNormalize)
+- [textInterpolation](./src/textInterpolation)
+- [timeDelay](./src/timeDelay)
+- [toHours](./src/toHours)
 
 ## Scripts
 
