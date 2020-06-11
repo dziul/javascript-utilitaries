@@ -33,7 +33,7 @@ export const getValueByDotNotation = (objectTarget, notation, separator = '.') =
   const parts = stringToArray(notation, separator);
   const partItemLast = parts.pop();
   if (!partItemLast) return null;
-  let copyTarget = Object.assign({}, objectTarget);
+  let copyTarget = { ...objectTarget };
   let next;
   do {
     next = parts.shift();
