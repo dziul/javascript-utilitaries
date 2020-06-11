@@ -30,6 +30,7 @@ Funções auxiliares.
 - [textInterpolation](./src/textInterpolation)
 - [timeDelay](./src/timeDelay)
 - [toHours](./src/toHours)
+- [searchFilter](./src/searchFilter)
 
 ## Scripts
 
