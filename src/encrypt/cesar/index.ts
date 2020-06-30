@@ -1,8 +1,14 @@
-const alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+const alphabet = 'abcdefghijklmnopqrstuvwxyz1234567890';
 const alphabetLength = alphabet.length - 1;
 
+const isLowerCase = (letter: string) => {
+  return letter.toLowerCase() === letter;
+};
+
 export const cesarEncrypLetter = (letter: string, shift: number) => {
-  const index = alphabet.indexOf(letter);
+  const entry = letter.toLowerCase();
+
+  const index = alphabet.indexOf(entry);
 
   if (index === -1) return letter;
   let nextModified;
@@ -14,13 +20,10 @@ export const cesarEncrypLetter = (letter: string, shift: number) => {
 
   const letterShifted = alphabet.charAt(nextModified);
 
-  return letterShifted;
+  return isLowerCase(letter) ? letterShifted : letterShifted.toUpperCase();
 };
 
 const cesarEncrypt = (message: string, shift = 1) =>
-  message
-    .split('')
-    .map((letter) => cesarEncrypLetter(letter, shift))
-    .join('');
+  [...message].map((letter) => cesarEncrypLetter(letter, shift)).join('');
 
 export default cesarEncrypt;

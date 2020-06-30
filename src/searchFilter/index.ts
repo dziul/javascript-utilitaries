@@ -4,7 +4,7 @@ import stringNormalize from '../stringNormalize';
 /**
  * @param   {string}  target  dot notation   @examples results.name.last
  */
-const searchFilter = <T = string>(needle: string, data: any[], target?: string): T[] => {
+const searchFilter = <T extends SearchFilterData>(data: T[], needle: string, target?: string) => {
   return data.filter((item) => {
     const needleParse = stringNormalize(needle.toLowerCase());
     let valueParse: string;
@@ -16,6 +16,10 @@ const searchFilter = <T = string>(needle: string, data: any[], target?: string):
     return valueParse.indexOf(needleParse) !== -1;
     // return valueProcessed.search(needleProcessed) !== -1;
   });
+};
+
+type SearchFilterData = {
+  toString(): string;
 };
 
 export default searchFilter;

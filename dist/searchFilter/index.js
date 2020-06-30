@@ -1,6 +1,6 @@
 import { getValueByDotNotation } from '../notationStringObject';
 import stringNormalize from '../stringNormalize';
-const searchFilter = (needle, data, target) => {
+const searchFilter = (data, needle, target) => {
   return data.filter((item) => {
     const needleParse = stringNormalize(needle.toLowerCase());
     let valueParse;

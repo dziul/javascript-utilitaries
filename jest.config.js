@@ -3,6 +3,6 @@
 module.exports = {
   preset: 'ts-jest',
   testMatch: ['**/*.test.ts'],
-  verbose: true,
+  verbose: false,
   bail: 1,
 };

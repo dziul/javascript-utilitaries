@@ -1,2 +1,9 @@
-declare const searchFilter: <T = string>(needle: string, data: any[], target?: string | undefined) => T[];
+declare const searchFilter: <T extends SearchFilterData>(
+  data: T[],
+  needle: string,
+  target?: string | undefined
+) => T[];
+declare type SearchFilterData = {
+  toString(): string;
+};
 export default searchFilter;
