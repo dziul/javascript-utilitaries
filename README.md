@@ -7,7 +7,7 @@ Funções auxiliares.
 - [bigger](./src/bigger)
 - [chunk](./src/chunk)
 - [colour](./src/colour)
-- [compareTextWithItsReverse](./src/compareTextWithItsReverse)
+- [isPalindrome](./src/isPalindrome)
 - [ellipsis](./src/ellipsis)
 - [fileExtesion](./src/fileExtesion)
 - [httpBuildQuery](./src/httpBuildQuery)
@@ -34,6 +34,7 @@ Funções auxiliares.
 - [timeDelay](./src/timeDelay)
 - [toHours](./src/toHours)
 - [searchFilter](./src/searchFilter)
+- [getRandomNumberFromInterval](./src/getRandomNumberFromInterval)
 
 ## Scripts
 
