@@ -1,6 +1,6 @@
 {
   "name": "javascript-utilitaries",
-  "version": "2.0.0",
+  "version": "2.5.0",
   "description": "javacript utilitaries",
   "scripts": {
     "clear-dist": "rm -f -r dist/*",

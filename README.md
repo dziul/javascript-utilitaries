@@ -35,6 +35,7 @@ Funções auxiliares.
 - [toHours](./src/toHours)
 - [searchFilter](./src/searchFilter)
 - [getRandomNumberFromInterval](./src/getRandomNumberFromInterval)
+- [toCamelCase](./src/toCamelCase)
 
 ## Scripts
 
