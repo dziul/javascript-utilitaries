@@ -1,8 +1,8 @@
 import cesar from '././index';
 
 it('Should encrypt and decrypt, no matter the shift', () => {
-  const value = 'Abcdz0';
-  const decodeValue = 'Bcde1a';
+  const value = 'ZAbcdz0';
+  const decodeValue = '1BcdeAa';
   expect(cesar(value, 1)).toEqual(decodeValue);
   expect(cesar(decodeValue, -1)).toEqual(value);
 
