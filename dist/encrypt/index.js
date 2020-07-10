@@ -1,10 +1,10 @@
 import { encode as encodeBaseFixFour, decode as decodeBaseFixFour } from './baseFixFour';
-import cesarEncript from './cesar';
+import cesarEncrypt from './cesar';
 export const encode = (entry, divideAt = 6, separater = '-') => {
   const data = encodeBaseFixFour(JSON.stringify([entry]), divideAt, separater);
-  return cesarEncript(data, 2);
+  return cesarEncrypt(data, 2);
 };
 export const decode = (entry, separater = '-') => {
-  const data = decodeBaseFixFour(cesarEncript(entry, -2), separater);
+  const data = decodeBaseFixFour(cesarEncrypt(entry, -2), separater);
   return JSON.parse(data)[0];
 };
