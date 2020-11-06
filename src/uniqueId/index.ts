@@ -1,21 +1,18 @@
-const characters = '0123456789aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ';
-const charactersLength = characters.length - 1;
+const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 
 const uniqueId = (maxCharacters = 6, namespace = '') => {
-  let result = '';
-  while (maxCharacters) {
-    const index = Math.round(Math.random() * charactersLength);
+  let result = namespace;
+  while (maxCharacters--) {
+    const index = Math.round(Math.random() * (--characters.length));
     result += characters[index];
-    maxCharacters--;
   }
-  return namespace + result;
+  return result;
 };
 
 export const hash = (strictLevel = 6, splitInto = 5, separator = '-') => {
   const result = [];
-  while (splitInto) {
+  while (splitInto--) {
     result.push(uniqueId(strictLevel));
-    splitInto--;
   }
   return result.join(separator);
 };
