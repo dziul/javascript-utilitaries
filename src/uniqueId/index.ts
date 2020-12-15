@@ -1,8 +1,8 @@
 const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 const lastIndexFromCharacters = characters.length - 1;
 
-const uniqueId = (maxCharacters = 6, namespace = '') => {
-  let result = namespace;
+const uniqueId = (maxCharacters = 6) => {
+  let result = '';
   while (maxCharacters--) {
     const index = Math.round(Math.random() * lastIndexFromCharacters);
     result += characters[index];
@@ -10,7 +10,7 @@ const uniqueId = (maxCharacters = 6, namespace = '') => {
   return result;
 };
 
-export const hash = (strictLevel = 6, splitInto = 5, separator = '-') => {
+export const generateKey = (strictLevel = 6, splitInto = 5, separator = '-') => {
   const result = [];
   while (splitInto--) {
     result.push(uniqueId(strictLevel));
