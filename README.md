@@ -23,6 +23,7 @@ Funções auxiliares.
   - [cesar](./src/encrypt/cesar)
   - [baseFixFour](./src/encrypt/baseFixFour)
 - [encryptAltB](./src/encryptPlanB)
+- [hash](./src/hash)
 - [htmlStringToDomDocument](./src/htmlStringToDomDocument)
 - [jwtParser](./src/jwtParser)
 - [localStorageEncrypted](./src/localStorageEncrypted)
