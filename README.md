@@ -26,6 +26,7 @@ Funções auxiliares.
 - [hash](./src/hash)
 - [htmlStringToDomDocument](./src/htmlStringToDomDocument)
 - [jwtParser](./src/jwtParser)
+- [storage](./src/storage)
 - [localStorageEncrypted](./src/localStorageEncrypted)
 - [manageMetaTag](./src/manageMetaTag)
 - [removeNode](./src/removeNode)
