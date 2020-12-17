@@ -38,6 +38,7 @@ Funções auxiliares.
 - [toCamelCase](./src/toCamelCase)
 - [isObject](./src/isObject)
 - [typeOf](./src/typeOf)
+- [repetition](./src/repetition)
 
 ## Scripts
 
