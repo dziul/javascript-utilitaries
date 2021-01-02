@@ -4,6 +4,6 @@ const core = (filename: string, remove = false) => {
   return remove ? brokenName.shift() : brokenName.pop();
 };
 
-export const getExtesion = (filename: string) => core(filename);
+export const getExtension = (filename: string) => core(filename);
 
-export const removeExtesion = (filename: string) => core(filename, true);
+export const removeExtension = (filename: string) => core(filename, true);
