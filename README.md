@@ -9,7 +9,7 @@ Funções auxiliares.
 - [colour](./src/colour)
 - [isPalindrome](./src/isPalindrome)
 - [ellipsis](./src/ellipsis)
-- [fileExtesion](./src/fileExtesion)
+- [fileExtension](./src/fileExtension)
 - [httpBuildQuery](./src/httpBuildQuery)
 - [leftFillNumber](./src/leftFillNumber)
 - [notationStringObject](./src/notationStringObject)
