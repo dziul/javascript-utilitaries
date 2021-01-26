@@ -12,3 +12,6 @@ export const values = <T extends { [key: string]: any }>(obj: T): ValueOf<T>[] =
 export const keys = <T extends { [key: string]: any }>(obj: T): (keyof T)[] => Object.keys(obj);
 
 export const containsKeyInObject = (obj: {[k:string]:any}, ...keys: string[]) => keys.every(key => obj.hasOwnProperty(key));
+
+
+type ValueOf<T> = T[keyof T];
