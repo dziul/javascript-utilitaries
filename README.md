@@ -38,7 +38,7 @@ Funções auxiliares.
 - [searchFilter](./src/searchFilter)
 - [getRandomNumberFromInterval](./src/getRandomNumberFromInterval)
 - [toCamelCase](./src/toCamelCase)
-- [isObject](./src/isObject)
+- [objectUtil](./src/objectUtil)
 - [typeOf](./src/typeOf)
 - [repetition](./src/repetition)
 
