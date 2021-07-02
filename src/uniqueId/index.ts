@@ -4,7 +4,9 @@ const lastIndexFromCharacters = characters.length - 1;
 const uniqueId = (maxCharacters = 6) => {
   let result = '';
   while (maxCharacters--) {
-    const index = Math.round(Math.random() * lastIndexFromCharacters);
+    //const random = window.crypto.getRandomValues(new Uint32Array(1))[0]/2**32; //to fortify
+    const random = Math.random();
+    const index = Math.round(random * lastIndexFromCharacters);
     result += characters[index];
   }
   return result;
