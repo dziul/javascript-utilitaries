@@ -1,18 +1,18 @@
 const DELAY = 500
 
-export const downloadFile = (url: string, elementTarget: HTMLElement | null) =>
+export const downloadFile = (url: string, elementTarget?: HTMLElement) =>
   new Promise((resolve: (arg: void) => void) => {
-    if (!elementTarget) throw new Error('Not found element target')
+    const  target  = elementTarget || document.body
 
     const anchor = document.createElement('a')
     anchor.href = url
     anchor.hidden = true
     anchor.download = ''
-    elementTarget.appendChild(anchor)
+    target.appendChild(anchor)
     anchor.click()
 
     window.setTimeout(() => {
-      elementTarget.removeChild(anchor)
+      target.removeChild(anchor)
       resolve()
     }, DELAY)
   })
