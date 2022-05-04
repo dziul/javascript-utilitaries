@@ -7,9 +7,9 @@ import stringNormalize from '../stringNormalize';
  */
 const snakeCaseFormatter = (text: string): string =>
   stringNormalize(text)
-    .split(' ')
+    .split(/\s+/)
+    .map(text => text.replace(/\W+/g, '').trim())
     .join('_')
-    .replace(/\W+/g, '')
     .replace(/([a-z])([A-Z])/g, '$1_$2')
     .toLocaleLowerCase();
 /**
