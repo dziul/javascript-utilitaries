@@ -5,7 +5,7 @@ import stringNormalize from '../stringNormalize';
  *
  * @examples Hello Word, BOT!  => hello_word_bot
  */
-const snakeCaseFormatter = (text: string): string =>
+export const snakeCaseFormatter = (text: string): string =>
   stringNormalize(text)
     .split(/\s+/)
     .map(t => t.replace(/\W+/g, '').trim())
