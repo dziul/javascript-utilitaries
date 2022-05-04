@@ -1,4 +1,4 @@
-const typeOf = (needle: any):string => {
+export const typeOf = (needle: any):string => {
 
   const objectPrototypeString = Object.prototype.toString.call(needle);
   const startSlice = objectPrototypeString.lastIndexOf(' ') + 1;
