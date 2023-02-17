@@ -1,3 +1,5 @@
+import normalizeText from '../stringNormalize';
+
 /**
  * retorna o texto normalizado para {@link toCamelCase} e {@link toPascalCase}
  *
