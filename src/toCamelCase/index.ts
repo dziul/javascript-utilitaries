@@ -1,19 +1,54 @@
-const toCamelCase = (needle: string) => {
-  const parsed = needle.toLowerCase().replace(/[^\w]+(\w)/g, (match, p1) => {
-    if (p1) return p1.toUpperCase();
-    return match;
-  });
+/**
+ * retorna o texto normalizado para {@link toCamelCase} e {@link toPascalCase}
+ *
+ * @private
+ * @param text
+ */
+function normalizeCamelAndPascalCase(text: string) {
+  return normalizeText(text)
+    .replace(/[^a-zA-Z]+(\w)/g, (match, capture) => {
+      if (capture) return capture.toUpperCase();
+      return match;
+    })
+    .replace(/[^a-zA-Z]+/g, '');
+}
 
-  return parsed.replace(/[^\w]/g, '');
-};
 
-export const toUpperCamelCase = (needle: string) => {
-  const parsed = toCamelCase(needle);
-  const firstLetter = parsed[0];
-  const restLetters = parsed.slice(1);
-  return firstLetter.toLocaleUpperCase() + restLetters;
-  // const [firstLetter, ...rest] = [...parsed];
-  // return firstLetter.toLocaleUpperCase() + rest.join('');
-};
+/**
+ * retorna um novo texto no formato _PascalCase_
+ *
+ * @param text texto que deseja formatar
+ *
+ * @example
+ * ```js
+ * toCamelCase(" camelCase ") // => "CamelCase"
+ * toCamelCase("pá+_~--tô") // => "PaTo"
+ * toCamelCase('{"key":"value"}') // => "KeyValue"
+ * ```
+ */
+export function toPascalCase(text: string) {
+  return normalizeCamelAndPascalCase(text).replace(
+    /(^[a-z])/i,
+    (_, firstLetter: string) => firstLetter.toLocaleUpperCase()
+  );
+}
 
-export default toCamelCase;
+
+/**
+ * retorna um novo texto no formato _camelCase_
+ *
+ * @param text texto que deseja formatar
+ *
+ * @example
+ * ```js
+ * toCamelCase(" camelCase ") // => "camelCase"
+ * toCamelCase("pá+_~--tô") // => "paTo"
+ * toCamelCase('{"key":"value"}') // => "keyValue"
+ * ```
+ */
+export function toCamelCase(text: string) {
+  return normalizeCamelAndPascalCase(text).replace(
+    /(^[a-z])/i,
+    (_, firstLetter: string) => firstLetter.toLocaleLowerCase()
+  );
+}
