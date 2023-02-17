@@ -14,9 +14,7 @@ import normalizeText from '../stringNormalize';
  */
 export const toSnakeCase = (text: string) => {
   return normalizeText(text.trim())
-    .split(/\s+/)
-    .map(partialText => partialText.replace(/\W+/g, '_'))
-    .join('_')
+    .replace(/\W+/g, '_')
     .replace(/([a-z])([A-Z])/g, '$1_$2')
     .replace(/_+/g, '_')
     .replace(/^_|_$/g, '')
