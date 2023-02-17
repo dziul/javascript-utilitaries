@@ -23,4 +23,4 @@ export const toSnakeCase = (text: string) => {
     .toLocaleLowerCase();
 };
 
-export default snakeCaseFormatter;
+export default toSnakeCase;
