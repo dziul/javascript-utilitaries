@@ -1,13 +1,64 @@
-import toCamelCase, { toUpperCamelCase } from './index';
+import { toCamelCase, toPascalCase } from './index';
 
-it('Should convert the text in camelCase', () => {
-  const text = 'Hello World, Guy!';
-  const textParsed = 'helloWorldGuy';
-  expect(toCamelCase(text)).toEqual(textParsed);
-});
+type Cases = Record<'in' | 'out', string>[];
 
-it('Should convert the text in UpperCamelCase', () => {
-  const text = 'Hello World, Girl!';
-  const textParsed = 'HelloWorldGirl';
-  expect(toUpperCamelCase(text)).toEqual(textParsed);
+describe('functions format case', () => {
+
+  it('deveria formatar o texto em camelCase', () => {
+    const cases = [
+      {
+        in: 'camelCase',
+        out: 'camelCase',
+      },
+      {
+        in: ' espace ',
+        out: 'espace',
+      },
+      {
+        in: '_underline_baby_',
+        out: 'underlineBaby',
+      },
+      {
+        in: '{"key":"value"}',
+        out: 'keyValue',
+      },
+      {
+        in: '',
+        out: '',
+      },
+    ] as Cases;
+
+    cases.forEach(item => {
+      expect(toCamelCase(item.in)).toEqual(item.out);
+    });
+  });
+
+  it('deveria formatar o texto em PascalCase', () => {
+    const cases = [
+      {
+        in: 'camelCase',
+        out: 'CamelCase',
+      },
+      {
+        in: ' espace ',
+        out: 'Espace',
+      },
+      {
+        in: '_underline_baby_',
+        out: 'UnderlineBaby',
+      },
+      {
+        in: '{"key":"value"}',
+        out: 'KeyValue',
+      },
+      {
+        in: '',
+        out: '',
+      },
+    ] as Cases;
+
+    cases.forEach(item => {
+      expect(toPascalCase(item.in)).toEqual(item.out);
+    });
+  });
 });
