@@ -21,4 +21,18 @@ export const toSnakeCase = (text: string) => {
     .toLocaleLowerCase();
 };
 
-export default toSnakeCase;
+/**
+ * retorna novo texto no formato `snake_case`
+ *
+ * @param text texto que deseja formatar
+ *
+ * @example
+ * ```js
+ * formatSnakeCase("camelCase") // => "CAMEL_CASE"
+ * formatSnakeCase("pá+_~--tô") // => "PA_TO"
+ * formatSnakeCase('{"key":"value"}') // => "KEY_VALUE"
+ * ```
+ */
+export function toScreamingSnakeCase(text: string){
+  return toSnakeCase(text).toLocaleUpperCase()
+}
